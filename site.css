@@ -70,10 +70,11 @@ p { margin: 0 0 1em; max-width: var(--texto); }
   display: flex; align-items: center; gap: .6rem;
   text-decoration: none; color: var(--petroleo-escuro);
   font-weight: 800; font-variation-settings: "wdth" 118; font-size: 1.15rem;
+  white-space: nowrap;
 }
 .marca svg { flex: none; }
 .menu { margin-left: auto; display: flex; gap: 1.25rem; align-items: center; }
-.menu a { text-decoration: none; color: var(--grafite); font-size: .98rem; }
+.menu a { text-decoration: none; color: var(--grafite); font-size: .98rem; white-space: nowrap; }
 .menu a[aria-current="page"] { color: var(--petroleo); font-weight: 700; box-shadow: inset 0 -2px 0 var(--latao); }
 .menu a:hover { color: var(--petroleo); }
 .botao-menu {
@@ -82,7 +83,7 @@ p { margin: 0 0 1em; max-width: var(--texto); }
   padding: .45rem .8rem; font: inherit; color: var(--grafite); cursor: pointer;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1140px) {
   .botao-menu { display: block; }
   .menu {
     display: none; position: absolute; left: 0; right: 0; top: 100%;
