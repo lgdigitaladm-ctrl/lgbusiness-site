@@ -6,6 +6,7 @@ Edite os textos aqui e rode de novo; o HTML gerado vai para a raiz.
 """
 import csv
 import json
+import hashlib
 import os
 from urllib.parse import quote
 
@@ -42,6 +43,11 @@ MARCA_SVG = (
 )
 
 
+def versao(nome):
+    with open(os.path.join(RAIZ, nome), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
 def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz=""):
     caminho = caminho.rstrip("/")
     itens = []
@@ -67,7 +73,7 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz="")
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{raiz}site.css">
+<link rel="stylesheet" href="{raiz}site.css?v={versao('site.css')}">
 </head>
 <body data-raiz="{raiz}" data-pagina="{pagina_id}">
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -114,7 +120,7 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz="")
   </div>
 </footer>
 <a class="whats-flutuante" href="{wa(msg_padrao)}" target="_blank" rel="noopener" data-origem="flutuante">WhatsApp</a>
-<script src="{raiz}site.js"></script>
+<script src="{raiz}site.js?v={versao('site.js')}"></script>
 </body>
 </html>
 """
