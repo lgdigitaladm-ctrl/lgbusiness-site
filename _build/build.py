@@ -409,17 +409,10 @@ def montar():
            bpo, "bpo")
 
     # ---------- Imóveis ----------
-    imoveis = []
-    with open(os.path.join(RAIZ, "_build", "imoveis.csv"), encoding="utf-8") as f:
-        for r in csv.DictReader(f):
-            def num(v):
-                return int(v) if v else None
-            imoveis.append({
-                "finalidade": r["finalidade"], "tipo": r["tipo"], "bairro": r["bairro"],
-                "dormitorios": num(r["dormitorios"]), "suites": num(r["suites"]), "garagens": num(r["garagens"]),
-                "venda": num(r["preco_venda"]), "locacao": num(r["preco_locacao"]),
-            })
-    dados = "<script>window.IMOVEIS = " + json.dumps(imoveis, ensure_ascii=False) + ";</script>\n"
+    with open(os.path.join(RAIZ, "_build", "imoveis.json"), encoding="utf-8") as f:
+        imoveis = json.load(f)
+    lista_js = [{k: v for k, v in i.items() if k != "descricao"} for i in imoveis]
+    dados = "<script>window.IMOVEIS = " + json.dumps(lista_js, ensure_ascii=False) + ";</script>\n"
     tipos = sorted({i["tipo"] for i in imoveis})
     botoes_tipo = "".join(
         f'<button type="button" data-grupo="tipo" data-valor="{t}" aria-pressed="false">{t}</button>' for t in tipos)
@@ -444,7 +437,7 @@ def montar():
     </div>
     <p class="contagem" id="contagem-imoveis" aria-live="polite"></p>
     <ul class="imoveis" id="lista-imoveis"></ul>
-    <p class="nota">Peça fotos, endereço e condições pelo WhatsApp. Valores sujeitos a alteração sem aviso.</p>
+    <p class="nota">Valores sujeitos a alteração sem aviso. Endereço exato e visitas pelo WhatsApp.</p>
   </div>
 </section>
 
@@ -466,6 +459,56 @@ def montar():
     pagina("imoveis", "Imóveis à venda e para alugar em Bauru | LG Business",
            "Casas, apartamentos, salões e terrenos à venda e para alugar em Bauru. Administração de aluguéis com corretor CRECI 101.538-F.",
            imv, "imoveis", dados)
+
+    # ---------- Página de cada imóvel ----------
+    def moeda(v):
+        return "R$ " + f"{v:,.0f}".replace(",", ".")
+    for im in imoveis:
+        bairro = im["bairro"] or "Bauru"
+        ficha = []
+        if im["dormitorios"]: ficha.append(f'{im["dormitorios"]} {"dormitório" if im["dormitorios"] == 1 else "dormitórios"}')
+        if im["suites"]: ficha.append(f'{im["suites"]} {"suíte" if im["suites"] == 1 else "suítes"}')
+        if im["garagens"]: ficha.append(f'{im["garagens"]} {"vaga" if im["garagens"] == 1 else "vagas"}')
+        precos = []
+        if im["venda"]: precos.append(f'<div class="preco">{moeda(im["venda"])}<small> venda</small></div>')
+        if im["locacao"]: precos.append(f'<div class="preco">{moeda(im["locacao"])}<small>/mês aluguel</small></div>')
+        if not precos: precos.append('<div class="preco"><small>Valor sob consulta</small></div>')
+        fotos = ""
+        if im["fotos"]:
+            itens = "".join(
+                f'<a href="fotos-imoveis/{im["ref"]}/{n}.jpg" target="_blank" rel="noopener"><img src="fotos-imoveis/{im["ref"]}/{n}{"" if n == 1 else "-p"}.jpg" alt="{im["tipo"]} em {bairro}, foto {n}" loading="{"eager" if n == 1 else "lazy"}"></a>'
+                for n in range(1, im["fotos"] + 1))
+            fotos = f'<div class="galeria">{itens}</div>'
+        else:
+            fotos = '<p class="nota">Fotos deste imóvel sob pedido pelo WhatsApp.</p>'
+        msg = f'Olá! Tenho interesse no imóvel Ref. {im["ref"]}: {im["tipo"]} em {bairro} ({im["finalidade"].lower()}). Pode me passar mais detalhes e agendar uma visita?'
+        corpo = f"""
+<section class="cabeca-pagina">
+  <div class="conteiner">
+    <p class="nota" style="margin:0 0 .75rem"><a href="imoveis">Voltar para os imóveis</a></p>
+    <h1>{im["tipo"]} em {bairro}</h1>
+    <p class="lead">{im["finalidade"]}, Ref. {im["ref"]}.{" " + ", ".join(ficha).capitalize() + "." if ficha else ""}</p>
+  </div>
+</section>
+<section class="secao" style="padding-top:1.5rem">
+  <div class="conteiner">
+    {fotos}
+    <div class="duas" style="margin-top:2.5rem">
+      <div>
+        <h2>Sobre o imóvel</h2>
+        <p>{im["descricao"] or "Peça a descrição completa pelo WhatsApp."}</p>
+      </div>
+      <div class="caixa-preco">
+        {"".join(precos)}
+        <div class="acoes"><a class="botao whats" href="{wa(msg)}" target="_blank" rel="noopener" data-origem="imovel-{im["ref"]}">Agendar visita pelo WhatsApp</a></div>
+        <p class="nota">Corretor responsável: Nelson de Castro Ramos Neto, CRECI 101.538-F. Valores sujeitos a alteração.</p>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+        resumo = f'{im["tipo"]} para {im["finalidade"].lower()} em {bairro}, Bauru/SP. ' + (", ".join(ficha) + "." if ficha else "")
+        pagina(im["pagina"], f'{im["tipo"]} em {bairro}, Bauru — Ref. {im["ref"]} | LG Business', resumo, corpo, "imovel")
 
     # ---------- M&A ----------
     ma = f"""
@@ -590,6 +633,8 @@ def montar():
         f.write(f"User-agent: *\nAllow: /\nSitemap: {DOMINIO}/sitemap.xml\n")
     urls = ["", "endereco-fiscal-bauru", "salas-e-coworking", "bpo-financeiro", "imoveis",
             "compra-e-venda-de-empresas", "contato", "politica-de-privacidade"]
+    with open(os.path.join(RAIZ, "_build", "imoveis.json"), encoding="utf-8") as f:
+        urls += [i["pagina"] for i in json.load(f)]
     with open(os.path.join(RAIZ, "sitemap.xml"), "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for u in urls:

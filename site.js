@@ -140,12 +140,13 @@
       }
       lista.innerHTML = itens.map(function (i) {
         var bairro = i.bairro || "Bauru";
-        var msg = "Olá! Tenho interesse no imóvel: " + i.tipo + " em " + bairro + " (" + i.finalidade.toLowerCase() + "). Pode me enviar fotos e detalhes?";
+        var foto = i.fotos ? '<img src="fotos-imoveis/' + i.ref + '/1-p.jpg" alt="" loading="lazy" width="112" height="84">' : '<span class="sem-foto">Sem foto</span>';
         return '<li class="imovel">' +
-          '<div class="col-tipo"><span class="tipo">' + i.tipo + '</span><span class="fin">' + i.finalidade + '</span></div>' +
-          '<div><span class="bairro">' + bairro + '</span><span class="det">' + (detalhes(i) || "Bauru, SP") + '</span></div>' +
+          '<a class="miniatura" href="' + i.pagina + '" tabindex="-1" aria-hidden="true">' + foto + '</a>' +
+          '<div><a class="titulo-imovel" href="' + i.pagina + '">' + i.tipo + ' em ' + bairro + '</a>' +
+          '<span class="det">' + i.finalidade + ', Ref. ' + i.ref + (detalhes(i) ? '. ' + detalhes(i) : '') + '</span></div>' +
           '<div class="valor">' + valor(i) + '</div>' +
-          '<a href="' + linkWhats(msg) + '" target="_blank" rel="noopener" data-origem="imovel">Pedir fotos</a>' +
+          '<a class="ver-imovel" href="' + i.pagina + '">Ver fotos</a>' +
           '</li>';
       }).join("");
     }
