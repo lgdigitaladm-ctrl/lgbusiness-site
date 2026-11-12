@@ -48,7 +48,7 @@
     caixa.setAttribute("role", "dialog");
     caixa.setAttribute("aria-label", "Uso de cookies");
     caixa.innerHTML =
-      '<p>Usamos cookies de medição para saber quais anúncios trazem contatos. Veja a <a href="' + raiz + 'politica-de-privacidade/">política de privacidade</a>.</p>' +
+      '<p>Usamos cookies de medição para saber quais anúncios trazem contatos. Veja a <a href="' + raiz + 'politica-de-privacidade">política de privacidade</a>.</p>' +
       '<div class="acoes"><button type="button" class="botao" data-c="aceito">Aceitar</button>' +
       '<button type="button" class="botao claro" data-c="recusado">Recusar</button></div>';
     caixa.addEventListener("click", function (ev) {

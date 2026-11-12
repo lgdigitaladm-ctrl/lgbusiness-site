@@ -24,12 +24,12 @@ def wa(texto):
 
 
 MENU = [
-    ("endereco-fiscal-bauru/", "Endereço fiscal"),
-    ("salas-e-coworking/", "Salas"),
-    ("bpo-financeiro/", "BPO financeiro"),
-    ("imoveis/", "Imóveis"),
-    ("compra-e-venda-de-empresas/", "Compra e venda de empresas"),
-    ("contato/", "Contato"),
+    ("endereco-fiscal-bauru", "Endereço fiscal"),
+    ("salas-e-coworking", "Salas"),
+    ("bpo-financeiro", "BPO financeiro"),
+    ("imoveis", "Imóveis"),
+    ("compra-e-venda-de-empresas", "Compra e venda de empresas"),
+    ("contato", "Contato"),
 ]
 
 MARCA_SVG = (
@@ -42,10 +42,8 @@ MARCA_SVG = (
 )
 
 
-def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz=None):
-    profundidade = caminho.count("/")
-    if raiz is None:
-        raiz = "../" * profundidade
+def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz=""):
+    caminho = caminho.rstrip("/")
     itens = []
     for href, rotulo in MENU:
         atual = ' aria-current="page"' if caminho == href else ""
@@ -58,24 +56,24 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz=Non
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{titulo}</title>
+{extra_head}<title>{titulo}</title>
 <meta name="description" content="{descricao}">
 <link rel="canonical" href="{canonico}">
 <meta property="og:title" content="{titulo}">
 <meta property="og:description" content="{descricao}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<link rel="icon" href="{raiz}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{raiz}favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{raiz}assets/site.css">
-{extra_head}</head>
+<link rel="stylesheet" href="{raiz}site.css">
+</head>
 <body data-raiz="{raiz}" data-pagina="{pagina_id}">
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo">
   <div class="conteiner">
-    <a class="marca" href="{raiz}">{MARCA_SVG}<span>LG Business</span></a>
+    <a class="marca" href="{raiz or './'}">{MARCA_SVG}<span>LG Business</span></a>
     <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav id="menu" class="menu" aria-label="Principal">
         {menu_html}
@@ -106,7 +104,7 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz=Non
         <h2>Páginas</h2>
         <ul>
           {"".join(f'<li><a href="{raiz}{h}">{r}</a></li>' for h, r in MENU)}
-          <li><a href="{raiz}politica-de-privacidade/">Política de privacidade</a></li>
+          <li><a href="{raiz}politica-de-privacidade">Política de privacidade</a></li>
         </ul>
       </div>
     </div>
@@ -116,12 +114,11 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz=Non
   </div>
 </footer>
 <a class="whats-flutuante" href="{wa(msg_padrao)}" target="_blank" rel="noopener" data-origem="flutuante">WhatsApp</a>
-<script src="{raiz}assets/site.js"></script>
+<script src="{raiz}site.js"></script>
 </body>
 </html>
 """
-    destino = os.path.join(RAIZ, caminho, "index.html") if caminho else os.path.join(RAIZ, "index.html")
-    os.makedirs(os.path.dirname(destino), exist_ok=True)
+    destino = os.path.join(RAIZ, (caminho or "index") + ".html")
     with open(destino, "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -184,7 +181,7 @@ def montar():
       <p class="lead">Sua empresa ganha endereço comercial, mesa com o nome dela e uma equipe de contadores, corretor e advogados no mesmo endereço.</p>
       <div class="acoes">
         <a class="botao whats" href="{wa_endereco}" target="_blank" rel="noopener" data-origem="heroi">Falar no WhatsApp</a>
-        <a class="botao claro" href="endereco-fiscal-bauru/">Ver planos e preços</a>
+        <a class="botao claro" href="endereco-fiscal-bauru">Ver planos e preços</a>
       </div>
       <a class="endereco" href="{MAPA}" target="_blank" rel="noopener">{ENDERECO}</a>
     </div>
@@ -202,10 +199,10 @@ def montar():
     <h2>O que você encontra na LG Business</h2>
     <p class="lead">Comece pelo endereço. Quando a empresa crescer, o resto está no mesmo prédio.</p>
     <ul class="areas">
-      <li><h3>Endereço fiscal e salas</h3><p>Endereço para o CNPJ a partir de R$ 149/mês, salas privativas com vaga de garagem e sala de reunião por hora.</p><a class="ver" href="endereco-fiscal-bauru/">Ver planos</a></li>
-      <li><h3>BPO financeiro</h3><p>Contas a pagar e a receber, conciliação bancária e relatórios mensais feitos por quem entende de contabilidade.</p><a class="ver" href="bpo-financeiro/">Ver o serviço</a></li>
-      <li><h3>Imóveis</h3><p>Compra, venda e administração de aluguéis em Bauru, com corretor CRECI 101.538-F.</p><a class="ver" href="imoveis/">Ver imóveis</a></li>
-      <li><h3>Compra e venda de empresas</h3><p>Avaliação, preparação e negociação sigilosa para quem quer vender ou comprar um negócio.</p><a class="ver" href="compra-e-venda-de-empresas/">Ver o serviço</a></li>
+      <li><h3>Endereço fiscal e salas</h3><p>Endereço para o CNPJ a partir de R$ 149/mês, salas privativas com vaga de garagem e sala de reunião por hora.</p><a class="ver" href="endereco-fiscal-bauru">Ver planos</a></li>
+      <li><h3>BPO financeiro</h3><p>Contas a pagar e a receber, conciliação bancária e relatórios mensais feitos por quem entende de contabilidade.</p><a class="ver" href="bpo-financeiro">Ver o serviço</a></li>
+      <li><h3>Imóveis</h3><p>Compra, venda e administração de aluguéis em Bauru, com corretor CRECI 101.538-F.</p><a class="ver" href="imoveis">Ver imóveis</a></li>
+      <li><h3>Compra e venda de empresas</h3><p>Avaliação, preparação e negociação sigilosa para quem quer vender ou comprar um negócio.</p><a class="ver" href="compra-e-venda-de-empresas">Ver o serviço</a></li>
     </ul>
   </div>
 </section>
@@ -316,7 +313,7 @@ def montar():
       <details><summary>Posso usar o endereço para abrir ou mudar o CNPJ?</summary><p>Sim. Antes de contratar, conferimos se a atividade da sua empresa pode funcionar com endereço fiscal pelas regras da Prefeitura de Bauru.</p></details>
       <details><summary>Atendem empresas de comércio com Inscrição Estadual?</summary><p>Sim, pelo plano Endereço fiscal comércio, de R$ 199 por mês.</p></details>
       <details><summary>Como recebo minhas correspondências?</summary><p>A recepção recebe em horário comercial ({HORARIO.lower()}) e avisa você pelo WhatsApp. Você retira na sua mesa.</p></details>
-      <details><summary>Posso trabalhar no local?</summary><p>Sim, no plano Mesa individual. Para uma sala só sua, veja as <a href="../salas-e-coworking/">salas privativas</a>.</p></details>
+      <details><summary>Posso trabalhar no local?</summary><p>Sim, no plano Mesa individual. Para uma sala só sua, veja as <a href="salas-e-coworking">salas privativas</a>.</p></details>
       <details><summary>Quem cuida da mudança de endereço na Junta e na Receita?</summary><p>O seu contador. Se você não tiver um, nossa equipe contábil pode indicar como fazer.</p></details>
     </div>
   </div>
@@ -330,7 +327,7 @@ def montar():
         "openingHours": "Mo-Fr 09:00-17:00",
     }
     ld = '<script type="application/ld+json">' + json.dumps(faq_ld, ensure_ascii=False) + "</script>\n"
-    pagina("endereco-fiscal-bauru/", "Endereço fiscal em Bauru a partir de R$ 149/mês | LG Business",
+    pagina("endereco-fiscal-bauru", "Endereço fiscal em Bauru a partir de R$ 149/mês | LG Business",
            "Endereço fiscal e comercial no Centro de Bauru para serviços e comércio, com mesa identificada e recepção de correspondências.",
            endereco, "endereco-fiscal", ld)
 
@@ -369,7 +366,7 @@ def montar():
         <a class="botao claro" href="{wa('Olá! Quero reservar a sala de reunião da LG Business.')}" target="_blank" rel="noopener" data-origem="sala-reuniao">Reservar horário</a>
       </div>
     </div>
-    <p class="nota">Também temos 10 mesas identificadas para quem só precisa de endereço ou de um lugar para trabalhar algumas horas. Veja os <a href="../endereco-fiscal-bauru/">planos de endereço fiscal</a>.</p>
+    <p class="nota">Também temos 10 mesas identificadas para quem só precisa de endereço ou de um lugar para trabalhar algumas horas. Veja os <a href="endereco-fiscal-bauru">planos de endereço fiscal</a>.</p>
   </div>
 </section>
 
@@ -388,7 +385,7 @@ def montar():
   </div>
 </section>
 """
-    pagina("salas-e-coworking/", "Salas comerciais e sala de reunião no Centro de Bauru | LG Business",
+    pagina("salas-e-coworking", "Salas comerciais e sala de reunião no Centro de Bauru | LG Business",
            "Salas privativas com vaga de garagem por R$ 1.250/mês e sala de reunião por R$ 150/hora no Centro de Bauru.",
            salas, "salas")
 
@@ -434,7 +431,7 @@ def montar():
   </div>
 </section>
 """
-    pagina("bpo-financeiro/", "BPO financeiro em Bauru | LG Business",
+    pagina("bpo-financeiro", "BPO financeiro em Bauru | LG Business",
            "Terceirize o financeiro da sua empresa: contas a pagar e a receber, conciliação bancária, fluxo de caixa e relatórios mensais em Bauru.",
            bpo, "bpo")
 
@@ -493,7 +490,7 @@ def montar():
   </div>
 </section>
 """
-    pagina("imoveis/", "Imóveis à venda e para alugar em Bauru | LG Business",
+    pagina("imoveis", "Imóveis à venda e para alugar em Bauru | LG Business",
            "Casas, apartamentos, salões e terrenos à venda e para alugar em Bauru. Administração de aluguéis com corretor CRECI 101.538-F.",
            imv, "imoveis", dados)
 
@@ -532,7 +529,7 @@ def montar():
   </div>
 </section>
 """
-    pagina("compra-e-venda-de-empresas/", "Compra e venda de empresas em Bauru | LG Business",
+    pagina("compra-e-venda-de-empresas", "Compra e venda de empresas em Bauru | LG Business",
            "Assessoria sigilosa para comprar ou vender empresas em Bauru e região: avaliação, preparação, negociação e contrato.",
            ma, "ma")
 
@@ -575,7 +572,7 @@ def montar():
   </div>
 </section>
 """
-    pagina("contato/", "Contato | LG Business Bauru",
+    pagina("contato", "Contato | LG Business Bauru",
            "WhatsApp (14) 99103-0944, atendimento@lgbusiness.adm.br e endereço na Rua Gérson França, 6-34, Centro, Bauru.",
            contato, "contato")
 
@@ -594,7 +591,7 @@ def montar():
   </div>
 </section>
 """
-    pagina("politica-de-privacidade/", "Política de privacidade | LG Business",
+    pagina("politica-de-privacidade", "Política de privacidade | LG Business",
            "Como a LG Business trata dados pessoais neste site.", priv, "privacidade")
 
     # ---------- 404 ----------
@@ -603,39 +600,23 @@ def montar():
   <div class="conteiner">
     <h1>Esta página mudou de endereço</h1>
     <p class="lead">O site da LG Business foi renovado. Escolha uma área no menu ou fale com a gente pelo WhatsApp.</p>
-    <div class="acoes"><a class="botao" href="/">Ir para o início</a></div>
+    <div class="acoes"><a class="botao" href="./">Ir para o início</a></div>
   </div>
 </section>
 """
-    # A 404 é servida em qualquer caminho, então usa endereços absolutos.
-    pagina("404/", "Página não encontrada | LG Business", "Página não encontrada.", p404, "404", raiz="/")
-    os.replace(os.path.join(RAIZ, "404", "index.html"), os.path.join(RAIZ, "404.html"))
-    os.rmdir(os.path.join(RAIZ, "404"))
-
-    # ---------- Redirecionamentos das páginas antigas ----------
-    antigas = {
-        "site/conteudo/bpo/": "bpo-financeiro/",
-        "site/conteudo/m-a/": "compra-e-venda-de-empresas/",
-        "site/conteudo/parceiros-profissionais/": "",
-        "estrutura-organizacional/": "",
-        "site/imoveis/": "imoveis/",
-    }
-    for antiga, nova in antigas.items():
-        prof = antiga.count("/")
-        alvo = "../" * prof + nova
-        destino = os.path.join(RAIZ, antiga, "index.html")
-        os.makedirs(os.path.dirname(destino), exist_ok=True)
-        with open(destino, "w", encoding="utf-8") as f:
-            f.write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">'
-                    f'<meta http-equiv="refresh" content="0; url={alvo}">'
-                    f'<link rel="canonical" href="{DOMINIO}/{nova}"><title>Página movida</title></head>'
-                    f'<body><p>Esta página mudou. <a href="{alvo}">Continue aqui</a>.</p></body></html>\n')
+    base404 = ("<script>(function(){var b=location.pathname.indexOf('/lgbusiness-site/')===0?'/lgbusiness-site/':'/';"
+               "document.write('<base href=\\''+b+'\\'>');"
+               "var m={'site/conteudo/bpo':'bpo-financeiro','site/conteudo/m-a':'compra-e-venda-de-empresas',"
+               "'site/conteudo/parceiros-profissionais':'','estrutura-organizacional':'','site/imoveis':'imoveis'};"
+               "var p=location.pathname.slice(b.length).replace(/\\/$/,'');"
+               "if(Object.prototype.hasOwnProperty.call(m,p)){location.replace(b+m[p]);}})();</script>\n")
+    pagina("404", "Página não encontrada | LG Business", "Página não encontrada.", p404, "404", base404)
 
     # ---------- robots e sitemap ----------
     with open(os.path.join(RAIZ, "robots.txt"), "w") as f:
         f.write(f"User-agent: *\nAllow: /\nSitemap: {DOMINIO}/sitemap.xml\n")
-    urls = ["", "endereco-fiscal-bauru/", "salas-e-coworking/", "bpo-financeiro/", "imoveis/",
-            "compra-e-venda-de-empresas/", "contato/", "politica-de-privacidade/"]
+    urls = ["", "endereco-fiscal-bauru", "salas-e-coworking", "bpo-financeiro", "imoveis",
+            "compra-e-venda-de-empresas", "contato", "politica-de-privacidade"]
     with open(os.path.join(RAIZ, "sitemap.xml"), "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for u in urls:
