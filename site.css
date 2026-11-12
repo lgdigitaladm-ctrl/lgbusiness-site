@@ -49,7 +49,7 @@ p { margin: 0 0 1em; max-width: var(--medida); }
 .topo { background: rgba(255,255,255,.96); border-bottom: 1px solid var(--linha); position: sticky; top: 0; z-index: 5; backdrop-filter: saturate(1.2) blur(6px); }
 .topo .conteiner { display: flex; align-items: center; gap: 1.5rem; min-height: 4.75rem; }
 .marca { display: block; flex: none; }
-.marca img { height: 52px; width: auto; }
+.marca img { height: 62px; width: auto; }
 .menu { margin-left: auto; display: flex; gap: 1.4rem; align-items: center; }
 .menu a { text-decoration: none; color: var(--texto); font-size: .95rem; font-weight: 500; white-space: nowrap; }
 .menu a:hover { color: var(--azul); }
