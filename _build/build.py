@@ -63,17 +63,17 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz="")
 <meta property="og:description" content="{descricao}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<link rel="icon" href="{raiz}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{raiz}logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{raiz}site.css">
 </head>
 <body data-raiz="{raiz}" data-pagina="{pagina_id}">
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo">
   <div class="conteiner">
-    <a class="marca" href="{raiz or './'}">{MARCA_SVG}<span>LG Business</span></a>
+    <a class="marca" href="{raiz or './'}"><img src="{raiz}logo.png" alt="LG Business" width="66" height="52"></a>
     <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav id="menu" class="menu" aria-label="Principal">
         {menu_html}
@@ -88,7 +88,7 @@ def pagina(caminho, titulo, descricao, corpo, pagina_id, extra_head="", raiz="")
   <div class="conteiner">
     <div class="colunas">
       <div>
-        <h2>LG Business</h2>
+        <img class="logo-rodape" src="{raiz}logo.png" alt="LG Business" width="71" height="56" loading="lazy">
         <p>Centro de negócios no Centro de Bauru: endereço fiscal, salas, BPO financeiro, imóveis e compra e venda de empresas.</p>
         <p><a href="{MAPA}" target="_blank" rel="noopener">{ENDERECO}</a></p>
       </div>
@@ -167,74 +167,41 @@ def montar():
     wa_endereco = wa("Olá! Quero saber sobre o endereço fiscal da LG Business.")
 
     # ---------- Início ----------
-    placas = []
-    nomes = [("LG Business", "Recepção"), ("Sua empresa", "Mesa 02")]
-    placas.append('<li class="placa"><span class="nome">LG Business</span><span class="mesa">Recepção</span></li>')
-    placas.append('<li class="placa livre"><span class="nome">Sua empresa</span><span class="mesa">Mesa 02</span></li>')
-    for n in range(3, 11):
-        placas.append(f'<li class="placa vazia"><span class="mesa">Mesa {n:02d}</span></li>')
     inicio = f"""
 <section class="heroi">
   <div class="conteiner">
-    <div>
-      <h1>Endereço fiscal, salas e gestão no Centro de Bauru.</h1>
-      <p class="lead">Sua empresa ganha endereço comercial, mesa com o nome dela e uma equipe de contadores, corretor e advogados no mesmo endereço.</p>
-      <div class="acoes">
-        <a class="botao whats" href="{wa_endereco}" target="_blank" rel="noopener" data-origem="heroi">Falar no WhatsApp</a>
-        <a class="botao claro" href="endereco-fiscal-bauru">Ver planos e preços</a>
-      </div>
-      <a class="endereco" href="{MAPA}" target="_blank" rel="noopener">{ENDERECO}</a>
+    <h1><span class="traco" aria-hidden="true"></span>Sua empresa com endereço no Centro de Bauru.</h1>
+    <p class="lead">Endereço fiscal, salas e uma equipe de contadores, corretor e advogados no mesmo lugar, para você cuidar só do seu negócio.</p>
+    <div class="acoes">
+      <a class="botao whats" href="{wa_endereco}" target="_blank" rel="noopener" data-origem="heroi">Falar no WhatsApp</a>
+      <a class="link-seta" href="endereco-fiscal-bauru">Ver planos e preços</a>
     </div>
-    <figure class="parede">
-      <ul class="placas" aria-label="Mesas identificadas na recepção">
-        {"".join(placas)}
-      </ul>
-      <figcaption>Cada empresa domiciliada tem uma mesa identificada na nossa recepção.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="secao">
-  <div class="conteiner">
-    <h2>O que você encontra na LG Business</h2>
-    <p class="lead">Comece pelo endereço. Quando a empresa crescer, o resto está no mesmo prédio.</p>
-    <ul class="areas">
-      <li><h3>Endereço fiscal e salas</h3><p>Endereço para o CNPJ a partir de R$ 149/mês, salas privativas com vaga de garagem e sala de reunião por hora.</p><a class="ver" href="endereco-fiscal-bauru">Ver planos</a></li>
-      <li><h3>BPO financeiro</h3><p>Contas a pagar e a receber, conciliação bancária e relatórios mensais feitos por quem entende de contabilidade.</p><a class="ver" href="bpo-financeiro">Ver o serviço</a></li>
-      <li><h3>Imóveis</h3><p>Compra, venda e administração de aluguéis em Bauru, com corretor CRECI 101.538-F.</p><a class="ver" href="imoveis">Ver imóveis</a></li>
-      <li><h3>Compra e venda de empresas</h3><p>Avaliação, preparação e negociação sigilosa para quem quer vender ou comprar um negócio.</p><a class="ver" href="compra-e-venda-de-empresas">Ver o serviço</a></li>
+    <ul class="fatos">
+      <li><strong>R$ 149/mês</strong><span>Endereço fiscal com mesa identificada</span></li>
+      <li><strong>Centro</strong><span>Rua Gérson França, 6-34, Bauru</span></li>
+      <li><strong>CRC, CRECI e OAB</strong><span>Profissionais registrados no mesmo endereço</span></li>
     </ul>
   </div>
 </section>
 
 <section class="secao escura">
   <div class="conteiner">
-    <h2>Endereço fiscal com preço aberto</h2>
-    <p class="lead">Sem orçamento escondido: escolha o plano e fale com a gente.</p>
-    {planos_html("inicio")}
+    <h2>Como podemos ajudar</h2>
+    <ul class="areas">
+      <li><h3>Endereço fiscal e salas</h3><p>Endereço para o CNPJ, salas privativas com vaga de garagem e sala de reunião por hora.</p><a class="ver" href="endereco-fiscal-bauru">Ver planos</a></li>
+      <li><h3>BPO financeiro</h3><p>Contas a pagar e a receber, conciliação bancária e relatório mensal da sua empresa.</p><a class="ver" href="bpo-financeiro">Conhecer o serviço</a></li>
+      <li><h3>Imóveis</h3><p>Compra, venda e administração de aluguéis em Bauru, com corretor CRECI 101.538-F.</p><a class="ver" href="imoveis">Ver imóveis</a></li>
+      <li><h3>Compra e venda de empresas</h3><p>Avaliação e negociação sigilosa para quem quer vender ou comprar um negócio.</p><a class="ver" href="compra-e-venda-de-empresas">Conhecer o serviço</a></li>
+    </ul>
   </div>
 </section>
 
-<section class="secao">
-  <div class="conteiner duas">
-    <div>
-      <h2>Por que ter a empresa no Centro</h2>
-      <ul class="lista-check">
-        <li>Endereço conhecido, perto de cartórios, bancos e órgãos públicos.</li>
-        <li>Recepção em horário comercial para receber suas correspondências e seus clientes.</li>
-        <li>Sua casa fora do cadastro público da empresa.</li>
-        <li>Sala de reunião por R$ 150 a hora, com café, quando precisar receber alguém.</li>
-      </ul>
-    </div>
-    <div>
-      <h2>Quem atende você</h2>
-      <p>A LG Business reúne profissionais registrados nos conselhos de cada área. Você resolve endereço, financeiro, imóveis e contratos sem trocar de endereço.</p>
-      <ul class="credenciais" style="grid-template-columns: repeat(2, minmax(0,1fr));">
-        <li><strong>CRC</strong><span>Contadores</span></li>
-        <li><strong>CRECI</strong><span>Corretor de imóveis</span></li>
-        <li><strong>OAB</strong><span>Advogados parceiros</span></li>
-        <li><strong>CNAI</strong><span>Avaliador de imóveis</span></li>
-      </ul>
+<section class="secao marca-faixa">
+  <div class="conteiner">
+    <h2>Endereço fiscal a partir de R$ 149 por mês</h2>
+    <p>Para serviços e comércio, com recepção de correspondências e aviso pelo WhatsApp.</p>
+    <div class="acoes">
+      <a class="botao" href="endereco-fiscal-bauru">Ver os planos</a>
     </div>
   </div>
 </section>
@@ -485,7 +452,7 @@ def montar():
     <div>
       <h2>Quer vender seu imóvel?</h2>
       <p>Avaliamos o preço de mercado e cuidamos da divulgação e da negociação até a escritura.</p>
-      <div class="acoes"><a class="botao claro" style="color:#fff;border-color:#fff" href="{wa('Olá! Quero vender meu imóvel com a LG Business.')}" target="_blank" rel="noopener" data-origem="vender-imovel">Avaliar meu imóvel</a></div>
+      <div class="acoes"><a class="botao claro" href="{wa('Olá! Quero vender meu imóvel com a LG Business.')}" target="_blank" rel="noopener" data-origem="vender-imovel">Avaliar meu imóvel</a></div>
     </div>
   </div>
 </section>
