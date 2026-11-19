@@ -409,9 +409,16 @@ def montar():
            bpo, "bpo")
 
     # ---------- Imóveis ----------
+    # Banco de imóveis: todos ficam guardados em imoveis.json; só os com "publicado": true vão para o site.
     with open(os.path.join(RAIZ, "_build", "imoveis.json"), encoding="utf-8") as f:
-        imoveis = json.load(f)
-    lista_js = [{k: v for k, v in i.items() if k != "descricao"} for i in imoveis]
+        todos = json.load(f)
+    imoveis = [i for i in todos if i.get("publicado", True)]
+    import glob
+    ativas = {i["pagina"] + ".html" for i in imoveis}
+    for arq in glob.glob(os.path.join(RAIZ, "imovel-*.html")):
+        if os.path.basename(arq) not in ativas:
+            os.remove(arq)
+    lista_js = [{k: v for k, v in i.items() if k not in ("descricao", "publicado")} for i in imoveis]
     dados = "<script>window.IMOVEIS = " + json.dumps(lista_js, ensure_ascii=False) + ";</script>\n"
     tipos = sorted({i["tipo"] for i in imoveis})
     botoes_tipo = "".join(
@@ -634,7 +641,7 @@ def montar():
     urls = ["", "endereco-fiscal-bauru", "salas-e-coworking", "bpo-financeiro", "imoveis",
             "compra-e-venda-de-empresas", "contato", "politica-de-privacidade"]
     with open(os.path.join(RAIZ, "_build", "imoveis.json"), encoding="utf-8") as f:
-        urls += [i["pagina"] for i in json.load(f)]
+        urls += [i["pagina"] for i in json.load(f) if i.get("publicado", True)]
     with open(os.path.join(RAIZ, "sitemap.xml"), "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for u in urls:
