@@ -511,12 +511,56 @@ def montar():
         pagina(im["pagina"], f'{im["tipo"]} em {bairro}, Bauru — Ref. {im["ref"]} | LG Business', resumo, corpo, "imovel")
 
     # ---------- M&A ----------
+    # Anúncios cegos: nada que identifique a empresa. Detalhes só após termo de sigilo.
+    OPORTUNIDADES = [
+        {"cod": "EMP-01", "tipo": "Venda", "setor": "Indústria de máquinas", "regiao": "Bauru/SP",
+         "fatos": [("Tempo de mercado", "mais de 70 anos"), ("Faturamento", "média de R$ 100 mil por mês"),
+                   ("Imóvel", "próprio, fora da negociação"), ("Preço", "sob consulta")],
+         "destaques": ["Equipe treinada", "Patentes de fabricação", "Opera sem o dono no dia a dia"],
+         "motivo": "Mudança de foco dos sócios"},
+        {"cod": "EMP-02", "tipo": "Venda", "setor": "Lavanderia industrial", "regiao": "Bauru/SP",
+         "fatos": [("Tempo de mercado", "mais de 20 anos"), ("Faturamento", "média de R$ 120 mil por mês"),
+                   ("Imóvel", "alugado, com imóvel vizinho incluído na negociação"), ("Preço", "sob consulta")],
+         "destaques": ["Equipe treinada", "Maquinário próprio e sem dívidas", "Opera sem o dono no dia a dia"],
+         "motivo": "Mudança de foco dos sócios"},
+        {"cod": "EMP-03", "tipo": "Investidor ou sócio", "setor": "Aplicativo de entrega e gestão para o comércio",
+         "regiao": "Bauru/SP e interior de São Paulo",
+         "fatos": [("Tempo de mercado", "mais de 5 anos"), ("Faturamento", "média de R$ 40 mil por mês"),
+                   ("Imóvel", "alugado, fora da negociação"), ("Condições", "sob consulta")],
+         "destaques": ["Equipe treinada", "Marca registrada e algoritmo próprio",
+                       "Procura investidor ou sócio que atue no ramo"],
+         "motivo": "Consolidar a marca e ampliar a área de atuação"},
+    ]
+    cards = ""
+    for o in OPORTUNIDADES:
+        fatos = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in o["fatos"])
+        dest = "".join(f"<li>{d}</li>" for d in o["destaques"])
+        msg = f"Olá! Tenho interesse na Oportunidade {o['cod']} ({o['setor']}). Aceito assinar o termo de sigilo para receber os detalhes."
+        cards += f"""
+      <li class="oport" id="{o['cod'].lower()}">
+        <p class="oport-tipo">{o['tipo']} · {o['regiao']}</p>
+        <h3>Oportunidade {o['cod']}</h3>
+        <p class="oport-setor">{o['setor']}</p>
+        <dl>{fatos}</dl>
+        <ul class="oport-dest">{dest}</ul>
+        <p class="oport-motivo">Motivo: {o['motivo']}</p>
+        <a class="botao whats" href="{wa(msg)}" target="_blank" rel="noopener" data-origem="ma-{o['cod'].lower()}">Tenho interesse</a>
+      </li>"""
     ma = f"""
 <section class="cabeca-pagina">
   <div class="conteiner">
     <h1>Compra e venda de empresas</h1>
     <p class="lead">Assessoria para vender ou comprar um negócio com segurança: do valor da empresa à assinatura do contrato, com sigilo em todas as etapas.</p>
     <div class="acoes"><a class="botao whats" href="{wa('Olá! Quero uma conversa sigilosa sobre compra ou venda de empresa.')}" target="_blank" rel="noopener" data-origem="ma-topo">Marcar conversa sigilosa</a></div>
+  </div>
+</section>
+
+<section class="secao" id="oportunidades">
+  <div class="conteiner">
+    <h2>Oportunidades abertas</h2>
+    <p class="nota">Para preservar as empresas, os anúncios não trazem nome, endereço nem números exatos. Os detalhes são enviados a interessados aprovados, depois da assinatura do termo de sigilo.</p>
+    <ul class="oportunidades">{cards}
+    </ul>
   </div>
 </section>
 

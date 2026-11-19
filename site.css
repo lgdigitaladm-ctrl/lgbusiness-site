@@ -219,3 +219,17 @@ p { margin: 0 0 1em; max-width: var(--medida); }
 .aviso-cookies p { margin: 0 0 .75rem; }
 .aviso-cookies .acoes { margin: 0; gap: .5rem; }
 .aviso-cookies button { font: inherit; cursor: pointer; padding: .5rem 1rem; }
+
+/* Oportunidades de compra e venda de empresas (anúncios sem identificação) */
+.oportunidades { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.oport { border: 1px solid var(--linha); border-top: 4px solid var(--indigo); border-radius: var(--raio); padding: 1.4rem 1.4rem 1.5rem; display: flex; flex-direction: column; background: #fff; }
+.oport-tipo { margin: 0; font-size: .85rem; font-weight: 700; color: var(--azul); }
+.oport h3 { margin: .2rem 0 0; color: var(--indigo); }
+.oport-setor { margin: .15rem 0 1rem; font-weight: 600; }
+.oport dl { margin: 0 0 1rem; display: grid; gap: .55rem; }
+.oport dt { font-size: .82rem; color: var(--cinza); }
+.oport dd { margin: 0; font-size: .97rem; }
+.oport-dest { margin: 0 0 .9rem; padding-left: 1.1rem; font-size: .95rem; }
+.oport-motivo { margin: 0 0 1.25rem; font-size: .92rem; color: var(--cinza); }
+.oport .botao { margin-top: auto; align-self: flex-start; }
+@media (max-width: 960px) { .oportunidades { grid-template-columns: 1fr; } }
