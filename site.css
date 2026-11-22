@@ -232,4 +232,5 @@ p { margin: 0 0 1em; max-width: var(--medida); }
 .oport-dest { margin: 0 0 .9rem; padding-left: 1.1rem; font-size: .95rem; }
 .oport-motivo { margin: 0 0 1.25rem; font-size: .92rem; color: var(--cinza); }
 .oport .botao { margin-top: auto; align-self: flex-start; }
+.oport-whats { margin-top: .7rem; font-size: .9rem; color: var(--whats); font-weight: 600; }
 @media (max-width: 960px) { .oportunidades { grid-template-columns: 1fr; } }

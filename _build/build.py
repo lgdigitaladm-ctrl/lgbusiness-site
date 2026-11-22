@@ -512,20 +512,22 @@ def montar():
 
     # ---------- M&A ----------
     # Anúncios cegos: nada que identifique a empresa. Detalhes só após termo de sigilo.
+    # Formulário público de interesse: gera o termo de sigilo e manda ao ZapSign (Apps Script, aoInteresseEmpresa).
+    FORM_INTERESSE = "https://docs.google.com/forms/d/e/1FAIpQLSdXl8VFS6aB5bG8on7YoNTFRsZUNrxUSlbVqCmc4uUwDzu9dQ/viewform?usp=pp_url&entry.802274345="
     OPORTUNIDADES = [
-        {"cod": "EMP-01", "tipo": "Venda", "setor": "Indústria de máquinas", "regiao": "Interior de São Paulo",
+        {"cod": "EMP-01", "form": "EMP-01 – Indústria de máquinas", "tipo": "Venda", "setor": "Indústria de máquinas", "regiao": "Interior de São Paulo",
          "fatos": [("Tempo de mercado", "mais de 50 anos"), ("Faturamento", "média de R$ 100 mil por mês"),
                    ("Lucro líquido", "margem em torno de 10%"), ("Funcionários", "até 5"),
                    ("Imóvel", "próprio, fora da negociação"), ("Preço", "sob consulta")],
          "destaques": ["Equipe treinada", "Patentes de fabricação", "Opera sem o dono no dia a dia"],
          "motivo": "Mudança de foco dos sócios"},
-        {"cod": "EMP-02", "tipo": "Venda", "setor": "Lavanderia industrial", "regiao": "Bauru/SP",
+        {"cod": "EMP-02", "form": "EMP-02 – Lavanderia industrial", "tipo": "Venda", "setor": "Lavanderia industrial", "regiao": "Bauru/SP",
          "fatos": [("Tempo de mercado", "mais de 20 anos"), ("Faturamento", "média de R$ 120 mil por mês"),
                    ("Lucro líquido", "margem em torno de 12%"), ("Funcionários", "entre 10 e 20"),
                    ("Imóvel", "alugado, com imóvel adicional incluído na negociação"), ("Preço", "sob consulta")],
          "destaques": ["Equipe treinada", "Maquinário próprio e sem dívidas", "Opera sem o dono no dia a dia"],
          "motivo": "Mudança de foco dos sócios"},
-        {"cod": "EMP-03", "tipo": "Investidor ou sócio", "setor": "Aplicativo de entrega e gestão para o comércio",
+        {"cod": "EMP-03", "form": "EMP-03 – Aplicativo de entrega e gestão para o comércio (investidor ou sócio)", "tipo": "Investidor ou sócio", "setor": "Aplicativo de entrega e gestão para o comércio",
          "regiao": "Bauru/SP e interior de São Paulo",
          "fatos": [("Tempo de mercado", "mais de 20 anos; com o aplicativo, mais de 5 anos"),
                    ("Faturamento", "média de R$ 40 mil por mês"),
@@ -540,6 +542,7 @@ def montar():
         fatos = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in o["fatos"])
         dest = "".join(f"<li>{d}</li>" for d in o["destaques"])
         msg = f"Olá! Tenho interesse na Oportunidade {o['cod']} ({o['setor']}). Aceito assinar o termo de sigilo para receber os detalhes."
+        form = FORM_INTERESSE + quote(o["form"])
         cards += f"""
       <li class="oport" id="{o['cod'].lower()}">
         <p class="oport-tipo">{o['tipo']} · {o['regiao']}</p>
@@ -548,7 +551,8 @@ def montar():
         <dl>{fatos}</dl>
         <ul class="oport-dest">{dest}</ul>
         <p class="oport-motivo">Motivo: {o['motivo']}</p>
-        <a class="botao whats" href="{wa(msg)}" target="_blank" rel="noopener" data-origem="ma-{o['cod'].lower()}">Tenho interesse</a>
+        <a class="botao" href="{form}" target="_blank" rel="noopener" data-origem="ma-{o['cod'].lower()}">Tenho interesse</a>
+        <a class="oport-whats" href="{wa(msg)}" target="_blank" rel="noopener" data-origem="ma-{o['cod'].lower()}-whats">Prefiro falar pelo WhatsApp</a>
       </li>"""
     ma = f"""
 <section class="cabeca-pagina">
@@ -562,7 +566,7 @@ def montar():
 <section class="secao" id="oportunidades">
   <div class="conteiner">
     <h2>Oportunidades abertas</h2>
-    <p class="nota">Para preservar as empresas, os anúncios não trazem nome, endereço nem números exatos. Os detalhes são enviados a interessados aprovados, depois da assinatura do termo de sigilo.</p>
+    <p class="nota">Para preservar as empresas, os anúncios não trazem nome, endereço nem números exatos. Para receber os detalhes, clique em "Tenho interesse": o termo de sigilo chega no seu e-mail para assinar pelo celular.</p>
     <ul class="oportunidades">{cards}
     </ul>
   </div>
