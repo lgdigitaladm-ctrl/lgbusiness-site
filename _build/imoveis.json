@@ -7,13 +7,12 @@
   "dormitorios": null,
   "suites": null,
   "garagens": null,
-  "venda": 358000,
+  "venda": 435000,
   "locacao": null,
   "descricao": "Sala, Cozinha, Área de Lazer, 02 Banheiros, 03 Quartos, sendo 01 Suíte, 01 vaga de garagem.",
   "fotos": 6,
   "pagina": "imovel-42-apartamento-parque-alto-sumare",
-  "publicado": false,
-  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
+  "publicado": true
  },
  {
   "ref": "72",
@@ -27,7 +26,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagem: 1 Área útil: 85 m² Área total: 85 m² Sala com sacada gourmet, uma suíte sala, cozinha, área de serviço, varanda gourmet",
   "fotos": 6,
-  "pagina": "imovel-72-apartamento-jardim-america"
+  "pagina": "imovel-72-apartamento-jardim-america",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "105",
@@ -41,7 +42,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagem: 1 Área útil: 44.4 m² sala, cozinha, banheiro, 02 dormitórios, garagem",
   "fotos": 6,
-  "pagina": "imovel-105-apartamento-vila-cardia"
+  "pagina": "imovel-105-apartamento-vila-cardia",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "127",
@@ -55,7 +58,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagem: 1 Sala, cozinha, dois dormitórios, garagem para um veículo",
   "fotos": 6,
-  "pagina": "imovel-127-apartamento-vila-giunta"
+  "pagina": "imovel-127-apartamento-vila-giunta",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "358",
@@ -69,7 +74,8 @@
   "locacao": null,
   "descricao": "Dormitórios: 4 (1 suíte) Garagens: 2 $ Condomínio: R$ 520,00 Cozinnha e area de serviço, sala de jantar, sala de tv, 2 banheiros, 4 quartos, sendo uma suite, 2 vagas de garagem, salão de festa.",
   "fotos": 6,
-  "pagina": "imovel-358-apartamento-vila-leme-da-silva"
+  "pagina": "imovel-358-apartamento-vila-leme-da-silva",
+  "publicado": true
  },
  {
   "ref": "40",
@@ -83,7 +89,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 4 (2 suítes) Garagens: 2 Pare melhores negociações, aceitamos veículos, terrenos ou casas na cidade de Presidente Prudente. Sobrado, sala, cozinha, copa, 04 quartos, 02 suítes, banheiro social, quintal com bom tamanho, espaço para dois carros, espaço no fundo, espaço de lazer no piso superior com churrasqueira, espaços para utilidades diversas, oficina de costura, quartos, comercio, etc.",
   "fotos": 6,
-  "pagina": "imovel-40-casa-nucleo-residencial-presidente-geisel"
+  "pagina": "imovel-40-casa-nucleo-residencial-presidente-geisel",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "77",
@@ -97,7 +105,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagem: 1 Valor locação: R$900,00 + IPTU Dois quartos, uma sala, um banheiro, uma cozinha e uma edicula com um quarto e área de serviço.",
   "fotos": 6,
-  "pagina": "imovel-77-casa-conjunto-habitacional-presidente-eurico-gaspar-dutra"
+  "pagina": "imovel-77-casa-conjunto-habitacional-presidente-eurico-gaspar-dutra",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "83",
@@ -111,7 +121,9 @@
   "locacao": null,
   "descricao": "SALA DE VISITA, SALA DE JANTAR, COZINHA, ÁREA DE SERVIÇO, GARAGEM, QUARTO, SUÍTE, BANHEIRO SOCIAL",
   "fotos": 6,
-  "pagina": "imovel-83-casa-vila-silva-pinto"
+  "pagina": "imovel-83-casa-vila-silva-pinto",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "94",
@@ -141,7 +153,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagem: 1 Medida do terreno: 384m² Área total: 343 m² 03 SALAS (ESTAR E JANTAR), COZINHA, DISPENSAS, 04 BANHEIROS, GARAGEM PARA 04 CARROS, 03 DORMITÓRIOS SENDO UMA SUÍTE MASTER, COM CLOSED, HIDRO MASSAGEM, SALA DE TV E JARDIM DE INVERNO, ÁREA DE LAZER COM CHURRASQUEIRA, FOGÃO A LENHA, COOK TOP E PISCINA 3X6 AQUECIDA; AQUECIMENTO SOLAR, CIRCUITO DE CÂMERAS, PORTÃO ELETRÔNICO TURBO.",
   "fotos": 6,
-  "pagina": "imovel-95-casa-jardim-estoril-iii"
+  "pagina": "imovel-95-casa-jardim-estoril-iii",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "96",
@@ -155,7 +169,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagens: 3 2 salas, copa, cozinha, 3 dormitórios sendo uma suíte, garagem para 3 carros ou mais, banheiro social, edícula com dormitório, sala, cozinha e banheiro com áreas de lazer e de serviço",
   "fotos": 6,
-  "pagina": "imovel-96-casa-jardim-auri-verde"
+  "pagina": "imovel-96-casa-jardim-auri-verde",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "101",
@@ -169,7 +185,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagem: 1 Área útil: 96.25 m² Área total: 132 m² Sala ampla, com pé direito alto, cozinha, 03 dormitórios, sendo uma suíte, banheiro social, corredor interno, corredor lateral, área de serviço, área de lazer com churrasqueira, garagem",
   "fotos": 6,
-  "pagina": "imovel-101-casa-vila-pacifico"
+  "pagina": "imovel-101-casa-vila-pacifico",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "103",
@@ -183,7 +201,9 @@
   "locacao": 3000,
   "descricao": "Dormitórios: 3 (3 suítes) Garagem: 1 Medida do terreno: 20 x 30 Área útil: 370 m² CÓPIA DO RG • CÓPIA DO CPF • CÓPIA DO COMPROVANTE DE RESIDÊNCIA • CÓPIA DO COMPROVANTE DE RENDA (03 Últimos meses) • CÓPIA DA DECLARAÇÃO DO IMPOSTO DE RENDA (último exercício) • CONSULTA DE PENDENCIAS OU RESTRIÇÕES ATUALIZADA. (Se realizada pela imobiliária com custos) FIADORES 03 Salas, copa , cozinha, lavabo, 03 dormitórios, sendo 02 suítes e uma suíte master, ampla garagem, quintal com paisagismo, edícula com um quarto e churrasqueira, quarto e banheiro para empregada",
   "fotos": 6,
-  "pagina": "imovel-103-casa-vila-coralina"
+  "pagina": "imovel-103-casa-vila-coralina",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "108",
@@ -197,7 +217,9 @@
   "locacao": null,
   "descricao": "Dormitório: 1 (1 suíte) Garagem: 1 Área útil: 152 m² Área total: 210 m² 03 salas, sendo dois ambientes e um escritório, copa e cozinha, 01 dormitório, sendo suíte, jardim de inverno, 02 banheiros (social e área de serviço), área de serviço, repleta em armários",
   "fotos": 6,
-  "pagina": "imovel-108-casa-vila-coralina"
+  "pagina": "imovel-108-casa-vila-coralina",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "110",
@@ -211,7 +233,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagem: 1 Medida do terreno: 10 x 40 Área útil: 134 m² Área total: 400 m² Sala, cozinha, dois dormitórios, banheiro social, área de serviço, garagem e um amplo quintal",
   "fotos": 6,
-  "pagina": "imovel-110-casa-vila-sao-joao-da-boa-vista"
+  "pagina": "imovel-110-casa-vila-sao-joao-da-boa-vista",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "112",
@@ -225,7 +249,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 4 (1 suíte) Garagem: 1 Medida do terreno: 8,5 x 19 Área útil: 140 m² Um quarteirão da Praia. Aceita permuta menor valor com casa, apartamento ou terreno em Bauru e Região, ou, São Paulo/Capital 04 dormitórios, sendo uma suíte; cozinha, sala, banheiro social, área gourmet com churrasqueira, forno e fogão a lenha, lavanderia, garagem para 03 carros.",
   "fotos": 6,
-  "pagina": "imovel-112-casa-jardim-imperador"
+  "pagina": "imovel-112-casa-jardim-imperador",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "114",
@@ -239,7 +265,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 Garagens: 3 Medida do terreno: 10 x 20 Área útil: 160 m² Sala, copa, cozinha, banheiros, três dormitórios, edícula com churrasqueira, área de serviço, garagem para três carros, cerca elétrica, alarme, quintal com piso em cerâmica.",
   "fotos": 6,
-  "pagina": "imovel-114-casa-bosque-da-saude"
+  "pagina": "imovel-114-casa-bosque-da-saude",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "119",
@@ -269,7 +297,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 4 (2 suítes) Garagens: 4 02 salas, cozinha repleta em armários, 04 dormitórios sendo 02 suítes, uma com closed, banheiro social, área de lazer com churrasqueira, forno e fogão a lenha, banheiro, lavanderia com armário, garagem para 04 carros",
   "fotos": 6,
-  "pagina": "imovel-121-casa-jardim-america"
+  "pagina": "imovel-121-casa-jardim-america",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "129",
@@ -283,7 +313,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagens: 2 Medida do terreno: 10 x 20 Área útil: 114.37 m² Área total: 200 m² sala, cozinha, banheiro social, dois dormitórios, edícula, área de serviço e duas garagens",
   "fotos": 6,
-  "pagina": "imovel-129-casa-vila-sao-joao-da-boa-vista"
+  "pagina": "imovel-129-casa-vila-sao-joao-da-boa-vista",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "130",
@@ -297,7 +329,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagem: 1 Medida do terreno: 11 x 33 Área útil: 185 m² Área total: 330 m² Sala, Sala de Jantar, cozinha, banheiro social, três dormitórios, sendo uma suíte, área de serviço, área de lazer, garagem para dois ou mais veículos, quintal.",
   "fotos": 6,
-  "pagina": "imovel-130-casa-parque-viaduto"
+  "pagina": "imovel-130-casa-parque-viaduto",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "131",
@@ -311,7 +345,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 (1 suíte) Garagem: 1 Medida do terreno: 10 x 30 Área útil: 146.32 m² Área total: 300 m² Garagem para dois autos, sala, sala de jantar, cozinha, dois dormitórios, sendo uma suíte, banheiro social, edícula com área de lazer, área de serviço e um quarto de despejo.",
   "fotos": 6,
-  "pagina": "imovel-131-casa-jardim-gerson-franca"
+  "pagina": "imovel-131-casa-jardim-gerson-franca",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "133",
@@ -325,7 +361,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagem: 1 Medida do terreno: 9,78x26 Área total: 232.45 m² Sala, cozinha, dois dormitórios, banheiro social, área de serviço e edícula.",
   "fotos": 6,
-  "pagina": "imovel-133-casa-jardim-auri-verde"
+  "pagina": "imovel-133-casa-jardim-auri-verde",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "140",
@@ -339,7 +377,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Medida do terreno: 11 x 44 Garagem, sala, cozinha, banheiro social, dois dormitórios e mais uma sala de tv. Área de lazer, com piscina de 4x8 metros, amplo quintal, churrasqueira, balcão. Edícula assobradada, com uma suíte andar inferior, banheiro social e no andar superior, amplo quarto.",
   "fotos": 6,
-  "pagina": "imovel-140-casa-vila-seabra"
+  "pagina": "imovel-140-casa-vila-seabra",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "141",
@@ -353,7 +393,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagens: 2 Medida do terreno: 10x20 Área total: 200 m² Sala, cozinha, banheiro social, dois dormitórios, salão comercial para delivery com forno a lenha e balcão de atendimento, garagem para dois autos, edícula com um dormitório/suíte, cozinha e sala, área de serviço.",
   "fotos": 6,
-  "pagina": "imovel-141-casa-nucleo-habitacional-mary-dota"
+  "pagina": "imovel-141-casa-nucleo-habitacional-mary-dota",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "147",
@@ -367,7 +409,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Garagem: 1 Medida do terreno: 11,20 x 23 Área útil: 200 m² Área total: 257.6 m² sala, cozinha, banheiro social, dois dormitórios, garagem coberta para dois autos, edícula com banheiro e um quarto, área de serviço e de lazer, quintal, ótima localização",
   "fotos": 6,
-  "pagina": "imovel-147-casa-jardim-america"
+  "pagina": "imovel-147-casa-jardim-america",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "155",
@@ -381,7 +425,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 5 (2 suítes) Garagem: 1 $ Condomínio: R$ 450,00 Medida do terreno: 12 x 30 Área útil: 400 m² Área total: 400 m² Sobrado 400m², 05 dormitórios, sendo 02 suítes com hidromassagem e com sacadas, 02 banheiros sociais, 01 lavabo, sala de estar 02 ambientes, sala tv, sala de jantar integrada com cozinha, dispensa, área de serviço, aquecimento solar, cisterna para acondicionar água pluvial, área gourmet completa com churrasqueira e bancada, piscina aquecida com \"bar molhado\",",
   "fotos": 6,
-  "pagina": "imovel-155-casa-quinta-ranieri"
+  "pagina": "imovel-155-casa-quinta-ranieri",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "158",
@@ -395,7 +441,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Área útil: 328.3 m² Área total: 2674.44 m² 01 SALA DE TV, 01 SALA DE ESTAR, 01 SALA DE JANTAR, 01 SALA DE VISITA, 03 DORMITÓRIOS, 03 BANHEIROS, 01 ATELIE, ÁREA DE LAZER, AMPLA GARAGEM",
   "fotos": 0,
-  "pagina": "imovel-158-casa-santa-helena"
+  "pagina": "imovel-158-casa-santa-helena",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "165",
@@ -409,7 +457,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagens: 2 Medida do terreno: 11 x 44 Área útil: 221.27 m² Área total: 484 m² Ampla garagem, duas salas, copa, cozinha, três dormitórios, sendo uma suíte, banheiro social, área de serviço, área de lazer. No quintal uma outra residência com três cômodos.",
   "fotos": 6,
-  "pagina": "imovel-165-casa-vila-ipiranga"
+  "pagina": "imovel-165-casa-vila-ipiranga",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "167",
@@ -423,7 +473,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagem: 1 Área útil: 462 m² Área total: 462 m² Sala, Copa/Cozinha com móveis planejados, área de serviço com móveis planejados, banheiro social, 03 dormitórios sendo uma suíte com closed, garagem para vários carros, quintal enorme.",
   "fotos": 6,
-  "pagina": "imovel-167-casa-vila-rocha"
+  "pagina": "imovel-167-casa-vila-rocha",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "174",
@@ -437,7 +489,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagem: 1 Área útil: 223.3 m² Área total: 249 m² SALA, COZINHA, ÁREA SERVICO, CONSULTÓRIO, ESCRITÓRIO, DORMINÓRIO, SUITE, GARAGEM",
   "fotos": 6,
-  "pagina": "imovel-174-casa-alto-da-cidade"
+  "pagina": "imovel-174-casa-alto-da-cidade",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "180",
@@ -452,8 +506,7 @@
   "descricao": "Dormitórios: 2 (1 suíte) Garagem: 1 SALA, COZINHA, 2 QUARTOS, 1 SUITE, 2 BANHEIROS, AREA DE SERVICO, GARAGEM 2 VAGAS,",
   "fotos": 6,
   "pagina": "imovel-180-casa-jardim-eldorado",
-  "publicado": false,
-  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
+  "publicado": true
  },
  {
   "ref": "185",
@@ -467,7 +520,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Medida do terreno: 13 X 13 Área útil: 16.9 m² Área total: 16.9 m² PROPRIETÁRIO: Dona Ester - (14)99134-9044 SALA, COZINHA, QUARTOS, BANHEIRO,AREA SERVIÇO",
   "fotos": 6,
-  "pagina": "imovel-185-casa-vila-sao-joao-da-boa-vista"
+  "pagina": "imovel-185-casa-vila-sao-joao-da-boa-vista",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "256",
@@ -481,21 +536,24 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 - 3 Dormitórios: - 3 Banheiros: - Cozinha, lavanderia, sala de jantar, sala de estar.",
   "fotos": 6,
-  "pagina": "imovel-256-casa-jardim-dona-sarah"
+  "pagina": "imovel-256-casa-jardim-dona-sarah",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "359",
-  "finalidade": "Venda",
+  "finalidade": "Venda e locação",
   "tipo": "Casa",
   "bairro": "Vila Cardia",
   "dormitorios": 3,
   "suites": null,
   "garagens": 2,
-  "venda": 480000,
-  "locacao": null,
+  "venda": 450000,
+  "locacao": 2100,
   "descricao": "Dormitórios: 3 Garagens: 2 Medida do terreno: 11 X 32 Área total: 352 m² QUARTOS, SALA, COZINHA, BANHEIROS, GARAGEM, ÁREA SERVIÇO, QUINTAL COM PLANTAS FRUTIFERAS",
   "fotos": 6,
-  "pagina": "imovel-359-casa-vila-cardia"
+  "pagina": "imovel-359-casa-vila-cardia",
+  "publicado": true
  },
  {
   "ref": "360",
@@ -509,7 +567,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (2 suítes) Garagens: 4 Medida do terreno: 11 x 42 Área útil: 462 m² Área total: 462 m² SALA DE VISITAS, SALA DE JANTAR, COZINHA, ÁREA DE SERVIÇOS, GARAGEM, QUARTSUITE, BANHEIRO SOCIAL, EDICULA, COM QUARTO E BANHEIRO, CHURRASQUEIRA, PISCINA.",
   "fotos": 6,
-  "pagina": "imovel-360-casa-jardim-santos-dumont"
+  "pagina": "imovel-360-casa-jardim-santos-dumont",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "97",
@@ -519,11 +579,12 @@
   "dormitorios": null,
   "suites": null,
   "garagens": null,
-  "venda": 850000,
+  "venda": 990000,
   "locacao": null,
   "descricao": "CÓPIA DO RG • CÓPIA DO CPF • CÓPIA DO COMPROVANTE DE RESIDÊNCIA • CÓPIA DO COMPROVANTE DE RENDA (03 Últimos meses) • CÓPIA DA DECLARAÇÃO DO IMPOSTO DE RENDA (último exercício) • CONSULTA DE PENDENCIAS OU RESTRIÇÕES ATUALIZADA. (Se realizada pela imobiliária com custos) FIADORES Amplo salão comercial, contendo dois mezaninos, 02 cozinhas, sendo uma cozinha com churrasqueira, 02 banheiros (masculino e feminino) e 04 salas.",
   "fotos": 6,
-  "pagina": "imovel-97-salao-vila-engler"
+  "pagina": "imovel-97-salao-vila-engler",
+  "publicado": true
  },
  {
   "ref": "64",
@@ -533,11 +594,12 @@
   "dormitorios": null,
   "suites": null,
   "garagens": null,
-  "venda": 260000,
+  "venda": 350000,
   "locacao": null,
   "descricao": "Medida do terreno: 11,25x24,75x25,5x19,35 Área útil: 374.65 m² Área total: 374.65 m²",
   "fotos": 5,
-  "pagina": "imovel-64-terreno-vila-sao-francisco"
+  "pagina": "imovel-64-terreno-vila-sao-francisco",
+  "publicado": true
  },
  {
   "ref": "106",
@@ -551,7 +613,8 @@
   "locacao": null,
   "descricao": "Medida do terreno: 22 x 44 Área útil: 968 m² Área total: 968 m² Excelente localização.",
   "fotos": 6,
-  "pagina": "imovel-106-terreno-centro"
+  "pagina": "imovel-106-terreno-centro",
+  "publicado": true
  },
  {
   "ref": "128",
@@ -565,7 +628,9 @@
   "locacao": null,
   "descricao": "Medida do terreno: 10 x 20 Área total: 200 m² Aceita troca (preço $300 mil); ou aluga",
   "fotos": 6,
-  "pagina": "imovel-128-terreno-centro"
+  "pagina": "imovel-128-terreno-centro",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "151",
@@ -579,7 +644,9 @@
   "locacao": null,
   "descricao": "Medida do terreno: 12 X 48 Área útil: 576 m² Área total: 576 m² TERRENO EM ÓTIMA LOCALIZAÇÃO, 150 METROS DA AV PINHEIRO MACHADO. PODE SER TRANSFORMADO EM DOIS LOTES.",
   "fotos": 6,
-  "pagina": "imovel-151-terreno-parque-santa-edwiges"
+  "pagina": "imovel-151-terreno-parque-santa-edwiges",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "169",
@@ -593,7 +660,9 @@
   "locacao": null,
   "descricao": "Medida do terreno: 10 x 27 Área total: 270 m² EXCELENTE TERRENO",
   "fotos": 6,
-  "pagina": "imovel-169-terreno-jardim-maramba"
+  "pagina": "imovel-169-terreno-jardim-maramba",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "173",
@@ -607,7 +676,8 @@
   "locacao": null,
   "descricao": "Medida do terreno: 22X12X6 Área útil: 257.23 m² Área total: 257.23 m² EXCELENTE TERRENO, MEDINDO 257,23m² , SENDO 22X12X6. EXCELENTE PARA COMÉRCIO.",
   "fotos": 6,
-  "pagina": "imovel-173-terreno-vila-dutra"
+  "pagina": "imovel-173-terreno-vila-dutra",
+  "publicado": true
  },
  {
   "ref": "117",
@@ -637,7 +707,9 @@
   "locacao": 1000,
   "descricao": "Dormitórios: 2 Garagem: 1 Área útil: 45 m² Área total: 45 m² Aluguel + condomínio. Incluído no condomínio água e gás encanado. Portaria 24 horas sala, cozinha com armários, dois dormitórios com ventilador de teto, banheiro com armário e box, área de serviço, garagem.",
   "fotos": 4,
-  "pagina": "imovel-134-apartamento-jardim-terra-branca"
+  "pagina": "imovel-134-apartamento-jardim-terra-branca",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "139",
@@ -651,7 +723,9 @@
   "locacao": 5000,
   "descricao": "Área útil: 650 m² Área total: 650 m² Casa 650 m² de construção, 4 quartos, sendo 2 suítes, Todos com armários embutidos, Ar condicionado, Escritório, Sala de estar ampla com lareira, Sala de tv ampla com sacada, Sala de jantar, Lavabo, Cozinha planejada, Lavanderia espaçosa, Varanda dos dois lados da casa com jardim de inverno. Garagem coberta para 6 autos. Sistema de monitoramento por câmeras, Portão eletrônico, Pomar maravilhoso. Área de lazer completa, Piscina 4×8 Mesa de snoker oficial",
   "fotos": 6,
-  "pagina": "imovel-139-casa-bauru"
+  "pagina": "imovel-139-casa-bauru",
+  "publicado": false,
+  "arquivado_motivo": "Fora da lista de divulgação (26/11/2026)"
  },
  {
   "ref": "164",
@@ -682,7 +756,6 @@
   "descricao": "Área útil: 35 m² Área total: 35 m²",
   "fotos": 6,
   "pagina": "imovel-362-salao-vila-falcao",
-  "publicado": false,
-  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
+  "publicado": true
  }
 ]
