@@ -613,7 +613,9 @@
   "locacao": 800,
   "descricao": "Dormitório: 1 R$800,00 + IPTU Sala, cozinha, 01 dormitório, banheiro, área de serviço e uma área de convivência sob o telhado.",
   "fotos": 6,
-  "pagina": "imovel-117-apartamento-centro"
+  "pagina": "imovel-117-apartamento-centro",
+  "publicado": false,
+  "arquivado_motivo": "Locado (contrato ativo importado em 26/11/2026)"
  },
  {
   "ref": "134",
@@ -655,7 +657,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 Medida do terreno: 11 x 22 Área útil: 162.11 m² Área total: 242 m² Imóvel formado por duas residências: sala, cozinha, banheiro social, dois dormitórios, área de serviço e quintal. Na frente um salão comercial",
   "fotos": 6,
-  "pagina": "imovel-164-casa-vila-falcao"
+  "pagina": "imovel-164-casa-vila-falcao",
+  "publicado": false,
+  "arquivado_motivo": "Locado (contrato ativo importado em 26/11/2026)"
  },
  {
   "ref": "362",

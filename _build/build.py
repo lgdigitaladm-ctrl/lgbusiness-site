@@ -11,8 +11,8 @@ import os
 from urllib.parse import quote
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-WHATS = "5514991030944"
-FONE = "(14) 99103-0944"
+WHATS = "5514991839154"
+FONE = "(14) 99183-9154"
 EMAIL = "atendimento@lgbusiness.adm.br"
 ENDERECO = "Rua Gérson França, 6-34, Centro, Bauru/SP, CEP 17015-200"
 HORARIO = "Segunda a sexta, das 9h às 17h"
@@ -294,7 +294,7 @@ def montar():
 """
     faq_ld = {
         "@context": "https://schema.org", "@type": "LocalBusiness", "name": "LG Business",
-        "telephone": "+55-14-99103-0944", "email": EMAIL, "url": DOMINIO,
+        "telephone": "+55-14-99183-9154", "email": EMAIL, "url": DOMINIO,
         "address": {"@type": "PostalAddress", "streetAddress": "Rua Gérson França, 6-34", "addressLocality": "Bauru",
                     "addressRegion": "SP", "postalCode": "17015-200", "addressCountry": "BR"},
         "openingHours": "Mo-Fr 09:00-17:00",
@@ -418,7 +418,7 @@ def montar():
     for arq in glob.glob(os.path.join(RAIZ, "imovel-*.html")):
         if os.path.basename(arq) not in ativas:
             os.remove(arq)
-    lista_js = [{k: v for k, v in i.items() if k not in ("descricao", "publicado")} for i in imoveis]
+    lista_js = [{k: v for k, v in i.items() if k not in ("descricao", "publicado", "arquivado_motivo")} for i in imoveis]
     dados = "<script>window.IMOVEIS = " + json.dumps(lista_js, ensure_ascii=False) + ";</script>\n"
     tipos = sorted({i["tipo"] for i in imoveis})
     botoes_tipo = "".join(
@@ -648,7 +648,7 @@ def montar():
 </section>
 """
     pagina("contato", "Contato | LG Business Bauru",
-           "WhatsApp (14) 99103-0944, atendimento@lgbusiness.adm.br e endereço na Rua Gérson França, 6-34, Centro, Bauru.",
+           "WhatsApp (14) 99183-9154, atendimento@lgbusiness.adm.br e endereço na Rua Gérson França, 6-34, Centro, Bauru.",
            contato, "contato")
 
     # ---------- Privacidade ----------

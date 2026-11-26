@@ -5,7 +5,7 @@
   // Preencha quando as contas de medição estiverem prontas.
   // Ex.: GA4 "G-XXXXXXX", Google Ads "AW-XXXXXXX", Pixel da Meta "123456789".
   var MEDICAO = { ga4: "", googleAds: "", metaPixel: "" };
-  var WHATS = "5514991030944";
+  var WHATS = "5514991839154";
 
   function lerConsentimento() {
     try { return localStorage.getItem("lg-consentimento"); } catch (e) { return null; }
