@@ -11,7 +11,9 @@
   "locacao": null,
   "descricao": "Sala, Cozinha, Área de Lazer, 02 Banheiros, 03 Quartos, sendo 01 Suíte, 01 vaga de garagem.",
   "fotos": 6,
-  "pagina": "imovel-42-apartamento-parque-alto-sumare"
+  "pagina": "imovel-42-apartamento-parque-alto-sumare",
+  "publicado": false,
+  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
  },
  {
   "ref": "72",
@@ -123,7 +125,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 (1 suíte) Garagem: 1 Área útil: 116.11 m² Área total: 152 m² GARAGEM PARA DOIS VEÍCULOS, COZINHA, SALA DE JANTAR, SALA DE ESTAR, BANHEIRO SOCIAL, DOIS DORMITÓRIOS, SENDO UMA SUÍTE, ÁREA DE SERVIÇO COBERTA E QUINTAL. SENDO PONTUAL COM O PAGTO DO ALUGUEL, TERÁ DESCONTO DE R$100,00.",
   "fotos": 6,
-  "pagina": "imovel-94-casa-jardim-esplanada"
+  "pagina": "imovel-94-casa-jardim-esplanada",
+  "publicado": false,
+  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
  },
  {
   "ref": "95",
@@ -249,7 +253,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 3 (1 suíte) Garagens: 4 Medida do terreno: 6x30 Área útil: 90 m² Área total: 180 m² Pedras: Pias e bancadas em Preto São Gabriel e Mármore Travertino Romano, Pisos: Porcelanato de base branca, Blindex de 10 mm em tudo, Louças Deca Sala, cozinha americana, 03 dormitórios, sendo uma suíte, banheiro social, área de serviço, garagem para 04 carros",
   "fotos": 6,
-  "pagina": "imovel-119-casa-jardim-solange"
+  "pagina": "imovel-119-casa-jardim-solange",
+  "publicado": false,
+  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
  },
  {
   "ref": "121",
@@ -445,7 +451,9 @@
   "locacao": null,
   "descricao": "Dormitórios: 2 (1 suíte) Garagem: 1 SALA, COZINHA, 2 QUARTOS, 1 SUITE, 2 BANHEIROS, AREA DE SERVICO, GARAGEM 2 VAGAS,",
   "fotos": 6,
-  "pagina": "imovel-180-casa-jardim-eldorado"
+  "pagina": "imovel-180-casa-jardim-eldorado",
+  "publicado": false,
+  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
  },
  {
   "ref": "185",
@@ -673,6 +681,8 @@
   "locacao": 750,
   "descricao": "Área útil: 35 m² Área total: 35 m²",
   "fotos": 6,
-  "pagina": "imovel-362-salao-vila-falcao"
+  "pagina": "imovel-362-salao-vila-falcao",
+  "publicado": false,
+  "arquivado_motivo": "Locado (confirmado pelo usuário em 26/11/2026)"
  }
 ]
